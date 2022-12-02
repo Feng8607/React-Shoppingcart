@@ -1,0 +1,77 @@
+const Cardsdata = [
+  {
+    id: 1,
+    name: "暴龍獸",
+    imgdata: new URL("../components/pic/1.jpg", import.meta.url),
+    content: "必殺技「超級火焰」是從口中吐出超高溫火焰，將一切焚燒殆盡。",
+    price: 700,
+    qnty: 0,
+  },
+  {
+    id: 2,
+    name: "加魯魯獸",
+    imgdata: new URL("../components/pic/2.jpg", import.meta.url),
+    content: "必殺技是從口中吐出高溫藍色火焰的「妖狐火焰」。",
+    price: 500,
+    qnty: 0,
+  },
+  {
+    id: 3,
+    name: "巴多拉獸",
+    imgdata: new URL("../components/pic/3.jpg", import.meta.url),
+    content: "必殺技是振翅讓羽毛如流星般飛刺出去的「隕石巨翼」。",
+    price: 350,
+    qnty: 0,
+  },
+  {
+    id: 4,
+    name: "比多獸",
+    imgdata: new URL("../components/pic/4.jpg", import.meta.url),
+    content: "必殺技是「百萬爆焰」。",
+    price: 450,
+    qnty: 0,
+  },
+  {
+    id: 5,
+    name: "仙人掌獸",
+    imgdata: new URL("../components/pic/5.jpg", import.meta.url),
+    content: "必殺技是讓手臂前端的刺更加硬化再使勁毆打的「尖尖碰碰拳」。",
+    price: 480,
+    qnty: 0,
+  },
+  {
+    id: 6,
+    name: "海獅獸",
+    imgdata: new URL("../components/pic/6.jpg", import.meta.url),
+    content: "必殺技是將可再生的角發射出去的「魚叉火神炮」。",
+    price: 550,
+    qnty: 0,
+  },
+  {
+    id: 7,
+    name: "天使獸",
+    imgdata: new URL("../components/pic/7.jpg", import.meta.url),
+    content: "必殺技是以閃耀著黃金光輝的拳頭攻擊對手的「天堂之拳」。",
+    price: 650,
+    qnty: 0,
+  },
+  {
+    id: 8,
+    name: "迪路獸",
+    imgdata: new URL("../components/pic/8.jpg", import.meta.url),
+    content:
+      "必殺技有以長爪攻擊對手的「貓貓拳」，以及用銳利眼神操控敵人的「貓眼」。",
+    price: 400,
+    qnty: 0,
+  },
+  {
+    id: 9,
+    name: "天女獸",
+    imgdata: new URL("../components/pic/9.jpg", import.meta.url),
+    content: "必殺技為釋放強烈雷擊的「神聖弓箭」，此一招式也有「天誅」的別名",
+    price: 750,
+    qnty: 0,
+  },
+];
+
+export default Cardsdata;
