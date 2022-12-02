@@ -41,6 +41,8 @@ body {
 }
 .header .container .containerRight a {
   color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
 }
 .header .container .containerRight .cartHome {
   text-decoration: none;
@@ -488,7 +490,7 @@ body {
 }
 .Orderpage .container .formContainer .formInside .outPut {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   margin: 1rem 0;
   width: 100%;
@@ -547,6 +549,7 @@ body {
 }
 .confrimationPage .container .confrimationContent {
   display: flex;
+  width: 100%;
   justify-content: center;
   flex-direction: column;
   align-items: center;
@@ -554,17 +557,15 @@ body {
 }
 .confrimationPage .container .confrimationContent .card {
   display: flex;
-  width: auto;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
   flex-direction: column;
   border: 2px solid gray;
+  width: auto;
   padding: 1rem;
-  margin: 1rem 0;
 }
 .confrimationPage .container .confrimationContent .card p {
+  padding: 0.25rem 0;
   font-size: 1.25rem;
-  margin: 0.25rem 0;
 }
 .confrimationPage .container .confrimationContent .back {
   border-bottom: none;
@@ -579,6 +580,7 @@ body {
 }
 .confrimationPage .container .confrimationContent .output {
   display: flex;
+  align-items: center;
   width: 60%;
   margin: 1rem 0;
   justify-content: space-between;
@@ -617,6 +619,15 @@ body {
   }
 }
 @media screen and (max-width: 600px) {
+  .homePage .carousel .carouselContent {
+    padding: 1rem;
+  }
+  .homePage .carousel .carouselContent h2 {
+    font-size: 1.5rem;
+  }
+  .homePage .carousel .carouselContent a {
+    font-size: 1rem;
+  }
   .cartPage .container {
     width: 100%;
   }
@@ -630,7 +641,28 @@ body {
   .Orderpage .container .formContainer .formInside {
     width: 80%;
   }
+  .Orderpage .container .formContainer .formInside textarea {
+    height: 5rem;
+  }
+  .Orderpage .container .formContainer .formInside .outPut {
+    justify-content: space-between;
+  }
+  .Orderpage .container .formContainer .formInside .outPut .backCart {
+    font-size: 1rem;
+  }
+  .Orderpage .container .formContainer .formInside .outPut .outPutform {
+    font-size: 0.75rem;
+  }
   .confrimationPage .container {
     width: 100%;
+  }
+  .confrimationPage .container .confrimationContent .card {
+    width: 90%;
+  }
+  .confrimationPage .container .confrimationContent .card p {
+    font-size: 1rem;
+  }
+  .confrimationPage .container .confrimationContent .output {
+    width: 90%;
   }
 }/*# sourceMappingURL=style.css.map */

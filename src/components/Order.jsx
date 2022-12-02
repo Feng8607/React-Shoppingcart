@@ -78,6 +78,8 @@ const Order = () => {
               required="required"
               autoComplete="off"
               onChange={inputHandler}
+              type="text"
+              maxLength={12}
             ></input>
             <label>Email</label>
             <input
@@ -85,6 +87,8 @@ const Order = () => {
               required="required"
               autoComplete="off"
               onChange={emailHandler}
+              type="email"
+              maxLength={30}
             ></input>
             <label>電話</label>
             <input
@@ -92,6 +96,8 @@ const Order = () => {
               required="required"
               autoComplete="off"
               onChange={phoneHandler}
+              type="tel"
+              maxLength={11}
             ></input>
             <label>地址</label>
             <input
@@ -99,6 +105,8 @@ const Order = () => {
               required="required"
               autoComplete="off"
               onChange={adressHandler}
+              type="text"
+              maxLength={30}
             ></input>
             <label>付款方式</label>
             <select
