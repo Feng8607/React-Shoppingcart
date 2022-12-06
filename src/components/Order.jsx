@@ -38,12 +38,16 @@ const Order = () => {
   };
   const saveHandler = (e) => {
     e.preventDefault();
-    localStorage.setItem("name", JSON.stringify(name));
-    localStorage.setItem("email", JSON.stringify(email));
-    localStorage.setItem("phone", JSON.stringify(phone));
-    localStorage.setItem("adress", JSON.stringify(adress));
-    localStorage.setItem("pay", JSON.stringify(pay));
-    localStorage.setItem("content", JSON.stringify(content));
+    let formList = {
+      name: name,
+      email: email,
+      phone: phone,
+      adress: adress,
+      pay: pay,
+      content: content,
+    };
+
+    localStorage.setItem("list", JSON.stringify(formList));
     history("/confirmation");
   };
   return (
@@ -113,6 +117,7 @@ const Order = () => {
               placeholder="請選擇付款方式"
               autoComplete="off"
               onChange={payHandler}
+              required="required"
             >
               <option value="WebATM">WebATM</option>
               <option value="貨到付款">貨到付款</option>
@@ -131,7 +136,7 @@ const Order = () => {
                 </div>
               </div>
             ) : (
-              <p></p>
+              <></>
             )}
             <p className="remark">備註</p>
             <textarea
@@ -143,7 +148,12 @@ const Order = () => {
                 <FontAwesomeIcon icon={faAnglesLeft} />
                 回購物車
               </p>
-              <input className="outPutform" type="submit" value="繳交訂單" />
+              <input
+                disabled={!name}
+                className="outPutform"
+                type="submit"
+                value="繳交訂單"
+              />
             </div>
           </form>
         </div>

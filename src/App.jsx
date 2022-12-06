@@ -19,7 +19,7 @@ const App = () => {
       <Header />
       <Scrolltotop />
       <Routes>
-        <Route path="/" element={<Home data={data} />} />
+        <Route path="/" element={<Home data={data} setData={setData} />} />
         <Route
           path="/cart"
           element={<Cart data={data} setData={setData}></Cart>}

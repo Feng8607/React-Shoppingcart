@@ -1,6 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { INS } from "../redux/actions/action";
+import Carddata from "../components/cartdata";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -12,24 +16,35 @@ import "swiper/css/navigation";
 // import required modules
 import { Autoplay, Navigation, EffectFade, Pagination } from "swiper";
 
-const Home = ({ data }) => {
+const Home = ({ data, setData }) => {
+  const [search, setSearch] = useState("");
+  //提醒的State
   let [showAddToCart, setshowAddToCart] = useState(false);
   const getdata = useSelector((state) => state.countreducer);
   const getproductcount = useSelector((state) => state.cartreducer);
   const amount = getproductcount.cart.length;
   const dispatch = useDispatch();
-  const sendhandler = (e) => {
-    //console.log(e);
-    dispatch(ADD(e));
-  };
-  const removehandler = () => {
-    dispatch(REM());
-  };
-
+  //新增進購物車，顯示提醒畫面1秒
   const addhandler = (e) => {
     dispatch(INS(e));
     setshowAddToCart(true);
     setTimeout(() => setshowAddToCart(false), 1000);
+  };
+
+  //搜尋產品功能
+  const inputHandler = (e) => {
+    setSearch(e.target.value);
+  };
+  useEffect(() => {
+    setData(Carddata);
+  }, [search.length == 0]);
+  //輸入後
+  const outputHandler = () => {
+    const findProduct =
+      data && data.length > 0
+        ? data.filter((e) => e.name.includes(search))
+        : undefined;
+    setData(findProduct);
   };
 
   return (
@@ -83,7 +98,20 @@ const Home = ({ data }) => {
       </div>
       <div className="container">
         <h2>產品</h2>
+        <div className="searchContainer">
+          <div className="seachPosition">
+            <input
+              className="searchInput"
+              onChange={inputHandler}
+              placeholder="請輸入想要找的商品"
+            />
+            <button className="searchBTN" onClick={outputHandler}>
+              <FontAwesomeIcon icon={faMagnifyingGlass} />
+            </button>
+          </div>
+        </div>
         <div className="cards">
+          {data.length == 0 && <div className="defindPage">查無此商品</div>}
           {data.map((item) => {
             return (
               <div key={item.id} className="card">

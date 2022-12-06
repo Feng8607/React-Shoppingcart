@@ -16,19 +16,11 @@ const Confirmation = () => {
     history("/");
   };
   const backHandler = () => {
-    localStorage.removeItem("name");
-    localStorage.removeItem("email");
-    localStorage.removeItem("adress");
-    localStorage.removeItem("phone");
-    localStorage.removeItem("pay");
+    localStorage.removeItem("list");
     history("/order");
   };
-  let name = JSON.parse(localStorage.getItem("name"));
-  let email = JSON.parse(localStorage.getItem("email"));
-  let adress = JSON.parse(localStorage.getItem("adress"));
-  let totalPrice = JSON.parse(localStorage.getItem("totalPrice"));
-  let pay = JSON.parse(localStorage.getItem("pay"));
-  let phone = JSON.parse(localStorage.getItem("phone"));
+  let list = JSON.parse(localStorage.getItem("list"));
+  let totalPrice = localStorage.getItem("totalPrice");
   return (
     <div className="confrimationPage">
       <div className="container">
@@ -56,14 +48,13 @@ const Confirmation = () => {
         <div className="confrimationContent">
           <h2>訂單確認</h2>
           <div className="card">
-            <p>姓名:{name}</p>
-            <p>郵件:{email}</p>
-            <p>地址:{adress}</p>
-            <p>電話:{phone}</p>
-            <p>付款方式:{pay}</p>
+            <p>姓名:{list.name}</p>
+            <p>郵件:{list.email}</p>
+            <p>地址:{list.adress}</p>
+            <p>電話:{list.phone}</p>
+            <p>付款方式:{list.pay}</p>
             <p>總金額:{totalPrice}元</p>
           </div>
-
           <div className="output">
             <p className="back" onClick={backHandler}>
               <FontAwesomeIcon icon={faAnglesLeft} />
